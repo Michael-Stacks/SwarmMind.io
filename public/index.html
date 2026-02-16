@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwarmMind.io</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- HUD Overlay -->
+    <div id="hud">
+        <div id="hud-left">
+            <span id="player-count">Players: 0</span>
+            <span id="bot-count">Bots: 0</span>
+        </div>
+        <div id="hud-stats">
+            <div class="stat" data-stat="score"><span class="stat-label">Score</span><span id="stat-score">0</span></div>
+            <div class="stat" data-stat="speed"><span class="stat-label">SPD</span><span id="stat-speed">1.00</span></div>
+            <div class="stat" data-stat="cohesion"><span class="stat-label">COH</span><span id="stat-cohesion">1.00</span></div>
+            <div class="stat" data-stat="aggression"><span class="stat-label">AGR</span><span id="stat-aggression">1.00</span></div>
+            <div class="stat" data-stat="range"><span class="stat-label">RNG</span><span id="stat-range">1.00</span></div>
+        </div>
+    </div>
+
+    <!-- Effect indicators -->
+    <div id="effect-indicators"></div>
+
+    <!-- Boost bar -->
+    <div id="boost-container">
+        <div id="boost-label">BOOST <span id="boost-key">[SPACE]</span></div>
+        <div id="boost-bar-bg">
+            <div id="boost-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Mute button -->
+    <button type="button" id="mute-btn" title="Toggle audio">&#9835;</button>
+
+    <!-- Leaderboard -->
+    <div id="leaderboard">
+        <div id="lb-title">TOP SWARMS</div>
+        <div id="lb-entries"></div>
+    </div>
+
+    <!-- Minimap -->
+    <div id="minimap-container">
+        <canvas id="minimap" width="160" height="160"></canvas>
+    </div>
+
+    <!-- Death screen -->
+    <div id="death-screen" class="hidden">
+        <h1>SWARM DESTROYED</h1>
+        <p>Your nano-bots have been absorbed.</p>
+        <button id="respawn-btn">RESPAWN</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
